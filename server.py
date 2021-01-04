@@ -14,7 +14,12 @@ req_response = requests.get('https://api.github.com/repos/atom/atom').json()
 app = Flask(__name__)
 
 
+@app.route("/")
+def index():
+    return "Hello!"
+
+
 if __name__ == "__main__":
-    print(req_response['stargazers_count'])
-    print(response_data['stargazers_count'])
+    # print(req_response['stargazers_count'])
+    # print(response_data['stargazers_count'])
     app.run(debug=True)
